@@ -1,0 +1,182 @@
+:root{
+	--color-primary-100: #009dff;
+	--color-primary-200: #4ba7ff;
+	--color-primary-300: #6bb2ff;
+	--color-primary-400: #86bcff;
+	--color-primary-500: #9dc7ff;
+	--color-primary-600: #b2d2ff;
+
+	--color-surface-mixed-100: #191e26;
+	--color-surface-mixed-200: #2e333a;
+	--color-surface-mixed-300: #454950;
+	--color-surface-mixed-400: #5d6067;
+	--color-surface-mixed-500: #76797e;
+	--color-surface-mixed-600: #909297;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../font/Montserrat-Regular.ttf");
+}
+
+body{
+	font-family: Montserrat;
+	background-color: var(--color-surface-mixed-100);
+	margin: 25px;
+	color: #fff;
+	overflow-x: hidden;
+}
+
+a{
+	color: var(--color-primary-300);
+	text-decoration: none;
+}
+
+.content{
+	margin: 50px;
+}
+
+.center-content{
+	margin: auto;
+	width: fit-content;
+}
+
+.profile-image{
+	width: 200px;
+	height: 200px;
+	margin: 5px;
+	border-radius: 50%;
+}
+
+.profile-image-border{
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	border: 5px solid var(--color-primary-600);
+}
+
+.profie-name p{
+	display: inline;
+	margin: 0px;
+}
+
+.profie-name{
+	text-align: center;
+	font-size: 250%;
+	font-weight: 900;
+	color: var(--color-primary-200);
+}
+
+.profie-name .pronouns{
+	position: absolute;
+	text-align: center;
+	font-size: 60%;
+	margin-top: -5px;
+	color: #d875ff;
+}
+
+.about-content{
+	font-size: 200%;
+}
+
+.detailed-content{
+	font-size: 200%;
+	margin: 0px;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.usernav {
+	top: 0;
+	overflow: auto;
+	background-color: var(--color-surface-mixed-300);
+	border: 1px solid var(--color-primary-600);
+	border-radius: 20px;
+}
+
+.usernav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.usernav ul li {
+	display: inline;
+}
+
+.usernav ul li a {
+	font-size: 150%;
+	margin: 5px;
+	text-align: center;
+	display: inline-block;
+	color: white;
+	padding: 10px 10px;
+	border-radius: 15px;
+}
+
+.usernav ul li a:hover {
+	background-color: var(--color-primary-500);
+	animation: hoverinput_box 0.5s 1;
+}
+
+.ko-fi_support_btn{
+	background-color: var(--color-primary-100);
+	border-radius: 50%;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 65px;
+	height: 65px;
+}
+.kofi-image{
+	width: 65px;
+	height: 65px;
+}
+
+.pgload{
+	transform: translateY(-30px);
+	opacity: 0;
+	transition: 2s all ease;
+}
+
+.pgload.active{
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.pgload-bottom{
+	transform: translateY(30px);
+}
+
+.pgload-v.active{
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+.pgload-left{
+	transform: translateX(-30px);
+}
+
+.pgload-left.active{
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+.pgload-right{
+	transform: translateX(30px);
+}
+
+.pgload-right.active{
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+@keyframes hoverinput_box {
+	0% {
+		background-color:transparent;
+	}
+	100% {
+		background-color: var(--color-primary-500);
+	}
+}
