@@ -23,7 +23,7 @@ body{
 	font-family: Montserrat;
 	background-color: var(--color-surface-mixed-100);
 	margin: 25px;
-	color: #fff;
+	color: var(--color-primary-300);
 	overflow-x: hidden;
 }
 
