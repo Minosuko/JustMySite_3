@@ -1,5 +1,3 @@
-
-
 function page_load() {
 	var pgload = document.querySelectorAll(".pgload");
 	for(let i = 0; i < pgload.length; i++){
