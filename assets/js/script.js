@@ -27,10 +27,19 @@ function changeUrl(url) {
 	const xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
+			var r = this.response;
 			var el = document.createElement("html");
-			el.innerHTML = this.response;
+			el.innerHTML = r;
 			var context = el.getElementsByClassName('context');
 			document.getElementsByClassName('context')[0].innerHTML = context[0].innerHTML;
+			var title = el.getElementsByTagName('title')[0].innerHTML;
+			document.title = title;
+			window.history.pushState({
+				"html": r,
+				"pageTitle": title
+			}, "", url);
+			page_load();
+			changeUrlWork();
 		}
 	};
 	xhttp.open("GET", url, true);
