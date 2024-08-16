@@ -142,7 +142,7 @@ p{
 .pgload{
 	transform: translateY(-30px);
 	opacity: 0;
-	transition: 2s all ease;
+	transition: 1s all ease;
 }
 
 .pgload.active{

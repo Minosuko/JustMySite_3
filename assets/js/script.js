@@ -8,7 +8,7 @@ function page_load() {
 				pgload[i].classList.add("active");
 				pgload[i].setAttribute('is-loaded','true');
 			}
-		}, 200*(i+1));
+		}, 150*(i+1));
 	}
 }
 function changeUrlWork(){
