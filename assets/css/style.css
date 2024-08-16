@@ -25,6 +25,7 @@ body{
 	margin: 25px;
 	color: #fff;
 	overflow-x: hidden;
+	scale: 0.85;
 }
 
 a{
