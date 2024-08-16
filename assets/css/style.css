@@ -120,6 +120,10 @@ a{
 	animation: hoverinput_box 0.5s 1;
 }
 
+p{
+	margin: 5px;
+}
+
 .ko-fi_support_btn{
 	background-color: var(--color-primary-100);
 	border-radius: 50%;
@@ -129,6 +133,7 @@ a{
 	width: 65px;
 	height: 65px;
 }
+
 .kofi-image{
 	width: 65px;
 	height: 65px;
@@ -151,7 +156,6 @@ a{
 
 .pgload-v.active{
 	transform: translateX(0px);
-	opacity: 1;
 }
 
 .pgload-left{
@@ -160,7 +164,6 @@ a{
 
 .pgload-left.active{
 	transform: translateX(0px);
-	opacity: 1;
 }
 
 .pgload-right{
@@ -169,7 +172,6 @@ a{
 
 .pgload-right.active{
 	transform: translateX(0px);
-	opacity: 1;
 }
 
 @keyframes hoverinput_box {
