@@ -1,27 +1,42 @@
+function listAnim(){
+	var ul = document.querySelectorAll(".listanimated");
+	ul.forEach(function(s){
+		for (let c of s.children) {
+			c.classList.add("pgload-left");;
+		}
+	});
+}
 function page_load() {
-	var pgload = document.querySelectorAll(".pgload");
-	for(let i = 0; i < pgload.length; i++){
+	var pgload = document.querySelectorAll("[class*=pgload]");
+	let i = 0;
+	pgload.forEach(function(s){
 		setTimeout(()=>{
-			if(pgload[i].getAttribute('is-loaded') != 'true'){
-				pgload[i].classList.add("active");
-				pgload[i].setAttribute('is-loaded','true');
+			if(s.getAttribute('is-loaded') != 'true'){
+				s.classList.add("active");
+				s.setAttribute('is-loaded','true');
 			}
 		}, 100*(i+1));
-	}
+		i++;
+	});
 }
 function changeUrlWork(){
 	var a = document.getElementsByTagName('a');
-	for(let i = 0; i < a.length; i++){
-		if(!a[i].hasAttribute("smoothurlchange")){
-			if(!a[i].hasAttribute("nosmoothurlchange")){
-				a[i].setAttribute("smoothurlchange", "true");
-				a[i].addEventListener("click", function(e) {
+	for (let s of a) {
+		if(!s.hasAttribute("smoothurlchange")){
+			if(!s.hasAttribute("nosmoothurlchange")){
+				s.setAttribute("smoothurlchange", "true");
+				s.addEventListener("click", function(e) {
 					e.preventDefault();
-					changeUrl(a[i].pathname + a[i].search);
+					changeUrl(s.pathname + s.search);
 				});
 			}
 		}
 	}
+}
+function oneTimeFunc(){
+	listAnim();
+	page_load();
+	changeUrlWork();
 }
 function changeUrl(url) {
 	const xhttp = new XMLHttpRequest();
@@ -31,15 +46,14 @@ function changeUrl(url) {
 			var el = document.createElement("html");
 			el.innerHTML = r;
 			var context = el.getElementsByClassName('context');
-			document.getElementsByClassName('context')[0].innerHTML = context[0].innerHTML;
 			var title = el.getElementsByTagName('title')[0].innerHTML;
+			document.getElementsByClassName('context')[0].innerHTML = context[0].innerHTML;
 			document.title = title;
 			window.history.pushState({
 				"html": r,
 				"pageTitle": title
 			}, "", url);
-			page_load();
-			changeUrlWork();
+			oneTimeFunc();
 		}
 	};
 	xhttp.open("GET", url, true);
@@ -47,7 +61,6 @@ function changeUrl(url) {
 }
 document.addEventListener('readystatechange', function(e){
 	if(document.readyState == "complete"){
-		page_load();
-		changeUrlWork();
+		oneTimeFunc();
 	}
 });

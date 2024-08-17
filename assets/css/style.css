@@ -138,40 +138,30 @@ p{
 	width: 65px;
 	height: 65px;
 }
-
-.pgload{
-	transform: translateY(-30px);
+[class*='pgload']{
 	opacity: 0;
 	transition: 1s all ease;
 }
-
-.pgload.active{
-	transform: translateY(0);
+[class*='pgload'].active{
 	opacity: 1;
+	transform: translateX(0);
+	transform: translateY(0);
+}
+
+.pgload-top{
+	transform: translateY(-30px);
 }
 
 .pgload-bottom{
 	transform: translateY(30px);
 }
 
-.pgload-v.active{
-	transform: translateX(0px);
-}
-
 .pgload-left{
 	transform: translateX(-30px);
 }
 
-.pgload-left.active{
-	transform: translateX(0px);
-}
-
 .pgload-right{
 	transform: translateX(30px);
-}
-
-.pgload-right.active{
-	transform: translateX(0px);
 }
 
 @keyframes hoverinput_box {
